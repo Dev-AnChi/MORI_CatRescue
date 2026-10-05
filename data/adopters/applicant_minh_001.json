@@ -1,0 +1,20 @@
+{
+  "id": "applicant_minh_001",
+  "name": "Minh",
+  "household": {
+    "adults": 1,
+    "children": [],
+    "pets": [],
+    "housing_type": "apartment",
+    "landlord_permission": true,
+    "secure_windows": true
+  },
+  "work_schedule": {
+    "hours_away_per_day": 8,
+    "remote_days_per_week": 2
+  },
+  "experience": "previous_cat_owner",
+  "budget_band": "stable",
+  "questionnaire_answers": {},
+  "red_flags": []
+}

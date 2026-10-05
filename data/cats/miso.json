@@ -1,0 +1,27 @@
+{
+  "id": "miso",
+  "name": "Miso",
+  "age_group": "young",
+  "needs": {
+    "hunger": 68,
+    "thirst": 72,
+    "energy": 61,
+    "stress": 55,
+    "hygiene": 80,
+    "trust": 28,
+    "play": 52,
+    "health": 85
+  },
+  "traits": {
+    "shy": 0.65,
+    "playful": 0.35,
+    "foodie": 0.45,
+    "social": -0.15
+  },
+  "trait_confidence": {
+    "shy": 0.25,
+    "playful": 0.1,
+    "foodie": 0.1,
+    "social": 0.05
+  }
+}

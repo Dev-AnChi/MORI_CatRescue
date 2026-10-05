@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/interactables/cat_bed.gd" id="1_cat_bed"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cat_bed"]
+radius = 54.0
+
+[node name="CatBed" type="Node2D"]
+script = ExtResource("1_cat_bed")
+
+[node name="BedShadow" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-58, 1, -43, 20, 0, 30, 43, 20, 58, 1, 41, 16, 0, 24, -41, 16)
+color = Color(0.28, 0.17, 0.15, 0.22)
+
+[node name="OuterCushion" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-58, -7, -44, -25, 0, -34, 44, -25, 58, -7, 47, 16, 0, 27, -47, 16)
+color = Color(0.75, 0.43, 0.53, 1)
+
+[node name="Cushion" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-43, -7, -31, -20, 0, -25, 31, -20, 43, -7, 33, 10, 0, 17, -33, 10)
+color = Color(0.91, 0.66, 0.71, 1)
+
+[node name="OccupiedIndent" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-23, -7, -13, -14, 13, -14, 23, -7, 14, 3, -14, 3)
+color = Color(0.50, 0.31, 0.37, 0.55)
+
+[node name="InteractionPoint" type="Marker2D" parent="."]
+position = Vector2(0, 58)
+
+[node name="InteractionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_cat_bed")

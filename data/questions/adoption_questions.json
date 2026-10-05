@@ -1,0 +1,51 @@
+[
+  {
+    "id": "scratch_furniture",
+    "prompt": "Nếu mèo cào sofa, bạn sẽ làm gì?",
+    "answers": [
+      {
+        "id": "provide_scratcher",
+        "tags": [
+          "patient",
+          "cat_knowledge"
+        ]
+      },
+      {
+        "id": "punish",
+        "tags": [
+          "red_flag_punitive"
+        ]
+      },
+      {
+        "id": "declaw",
+        "tags": [
+          "hard_block_welfare"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vet_bill",
+    "prompt": "Nếu có hóa đơn thú y bất ngờ, bạn sẽ xử lý thế nào?",
+    "answers": [
+      {
+        "id": "emergency_fund",
+        "tags": [
+          "financial_ready"
+        ]
+      },
+      {
+        "id": "try_to_manage",
+        "tags": [
+          "conditional"
+        ]
+      },
+      {
+        "id": "avoid_vet",
+        "tags": [
+          "red_flag_medical"
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/interactables/litter_box.gd" id="1_litter_box"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_litter_box"]
+size = Vector2(112, 68)
+
+[node name="LitterBox" type="Node2D"]
+script = ExtResource("1_litter_box")
+uses_since_clean = 0
+
+[node name="TrayShadow" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-61, -17, 61, -17, 55, 32, -55, 32)
+color = Color(0.25, 0.16, 0.11, 0.23)
+
+[node name="Tray" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-58, -28, 58, -28, 50, 26, -50, 26)
+color = Color(0.45, 0.59, 0.47, 1)
+
+[node name="Litter" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-45, -18, 45, -18, 37, 15, -37, 15)
+color = Color(0.84, 0.78, 0.62, 1)
+
+[node name="UsedMark" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-8, -7, 9, -7, 12, 2, 3, 7, -10, 4, -13, -2)
+color = Color(0.45, 0.34, 0.23, 1)
+
+[node name="DirtyMarks" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-28, -8, -14, -10, -10, 0, -22, 5, -30, 0, 0, -10, 15, -9, 20, 1, 7, 6, 22, 7, 33, 2, 30, 12, 16, 15, 1, 9, -5, 10, -13, 16, -27, 12)
+color = Color(0.39, 0.28, 0.18, 1)
+
+[node name="InteractionPoint" type="Marker2D" parent="."]
+position = Vector2(0, 58)
+
+[node name="InteractionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("RectangleShape2D_litter_box")

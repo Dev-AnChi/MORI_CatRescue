@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://tests/test_interactable.gd" id="1_test"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_clickable"]
+radius = 34.0
+
+[node name="TestInteractable" type="Node2D"]
+script = ExtResource("1_test")
+
+[node name="Placeholder" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-32, -24, 32, -24, 38, 18, 0, 32, -38, 18)
+color = Color(0.43, 0.63, 0.88, 1)
+
+[node name="InteractionPoint" type="Marker2D" parent="."]
+position = Vector2(0, 48)
+
+[node name="InteractionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_clickable")

@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/actors/caretaker.tscn" id="1_caretaker"]
+[ext_resource type="PackedScene" path="res://scenes/interactables/food_bowl.tscn" id="2_food_bowl"]
+[ext_resource type="PackedScene" path="res://scenes/interactables/water_bowl.tscn" id="3_water_bowl"]
+[ext_resource type="PackedScene" path="res://scenes/interactables/litter_box.tscn" id="4_litter_box"]
+[ext_resource type="PackedScene" path="res://scenes/interactables/cat_bed.tscn" id="5_cat_bed"]
+[ext_resource type="PackedScene" path="res://scenes/interactables/cat_toy.tscn" id="6_cat_toy"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_room"]
+vertices = PackedVector2Array(64, 96, 1088, 96, 1088, 600, 64, 600)
+polygons = [PackedInt32Array(0, 1, 2, 3)]
+
+[node name="Main" type="Node2D"]
+
+[node name="World" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Room" type="Node2D" parent="World"]
+z_index = -2
+
+[node name="Backdrop" type="Polygon2D" parent="World/Room"]
+polygon = PackedVector2Array(0, 0, 1152, 0, 1152, 648, 0, 648)
+color = Color(0.45, 0.31, 0.26, 1)
+
+[node name="Wall" type="Polygon2D" parent="World/Room"]
+polygon = PackedVector2Array(32, 32, 1120, 32, 1120, 112, 32, 112)
+color = Color(0.82, 0.58, 0.45, 1)
+
+[node name="WallTrim" type="Polygon2D" parent="World/Room"]
+polygon = PackedVector2Array(32, 102, 1120, 102, 1120, 116, 32, 116)
+color = Color(0.67, 0.42, 0.31, 1)
+
+[node name="Floor" type="Polygon2D" parent="World/Room"]
+polygon = PackedVector2Array(64, 96, 1088, 96, 1088, 600, 64, 600)
+color = Color(0.96, 0.88, 0.71, 1)
+
+[node name="FloorInset" type="Polygon2D" parent="World/Room"]
+polygon = PackedVector2Array(84, 116, 1068, 116, 1068, 580, 84, 580)
+color = Color(0.98, 0.92, 0.78, 1)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="World"]
+navigation_polygon = SubResource("NavigationPolygon_room")
+
+[node name="Actors" type="Node2D" parent="World"]
+y_sort_enabled = true
+
+[node name="Caretaker" parent="World/Actors" instance=ExtResource("1_caretaker")]
+position = Vector2(576, 348)
+
+[node name="Interactables" type="Node2D" parent="World"]
+y_sort_enabled = true
+
+[node name="FoodBowl" parent="World/Interactables" instance=ExtResource("2_food_bowl")]
+position = Vector2(270, 470)
+
+[node name="WaterBowl" parent="World/Interactables" instance=ExtResource("3_water_bowl")]
+position = Vector2(400, 470)
+
+[node name="LitterBox" parent="World/Interactables" instance=ExtResource("4_litter_box")]
+position = Vector2(900, 220)
+
+[node name="CatBed" parent="World/Interactables" instance=ExtResource("5_cat_bed")]
+position = Vector2(250, 210)
+
+[node name="CatToy" parent="World/Interactables" instance=ExtResource("6_cat_toy")]
+position = Vector2(620, 190)

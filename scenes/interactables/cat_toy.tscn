@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/interactables/cat_toy.gd" id="1_cat_toy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cat_toy"]
+radius = 28.0
+
+[node name="CatToy" type="Node2D"]
+script = ExtResource("1_cat_toy")
+
+[node name="ToyShadow" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-27, 8, -15, 17, 15, 17, 27, 8, 15, 13, -15, 13)
+color = Color(0.24, 0.16, 0.12, 0.2)
+
+[node name="ToyBall" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-24, 0, -17, -17, 0, -24, 17, -17, 24, 0, 17, 17, 0, 24, -17, 17)
+color = Color(0.95, 0.72, 0.27, 1)
+
+[node name="YarnStripeA" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-21, -6, -15, -12, 18, 12, 14, 18)
+color = Color(0.88, 0.36, 0.31, 1)
+
+[node name="YarnStripeB" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-5, -22, 3, -22, 6, 22, -2, 22)
+color = Color(0.88, 0.36, 0.31, 1)
+
+[node name="InteractionPoint" type="Marker2D" parent="."]
+position = Vector2(0, 42)
+
+[node name="InteractionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_cat_toy")
