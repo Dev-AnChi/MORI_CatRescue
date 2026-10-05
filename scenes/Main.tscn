@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene load_steps=9 format=3]
 
 [ext_resource type="PackedScene" path="res://scenes/actors/caretaker.tscn" id="1_caretaker"]
 [ext_resource type="PackedScene" path="res://scenes/interactables/food_bowl.tscn" id="2_food_bowl"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" path="res://scenes/interactables/litter_box.tscn" id="4_litter_box"]
 [ext_resource type="PackedScene" path="res://scenes/interactables/cat_bed.tscn" id="5_cat_bed"]
 [ext_resource type="PackedScene" path="res://scenes/interactables/cat_toy.tscn" id="6_cat_toy"]
+[ext_resource type="PackedScene" path="res://scenes/actors/cat.tscn" id="7_cat"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_room"]
 vertices = PackedVector2Array(64, 96, 1088, 96, 1088, 600, 64, 600)
@@ -65,3 +66,8 @@ position = Vector2(250, 210)
 
 [node name="CatToy" parent="World/Interactables" instance=ExtResource("6_cat_toy")]
 position = Vector2(620, 190)
+
+[node name="Miso" parent="World/Actors" instance=ExtResource("7_cat")]
+position = Vector2(760, 410)
+cat_id = "miso"
+display_name = "Miso"

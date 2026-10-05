@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/actors/cat_controller.gd" id="1_controller"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cat"]
+radius = 15.0
+
+[node name="Cat" type="CharacterBody2D"]
+script = ExtResource("1_controller")
+
+[node name="Shadow" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-22, 10, -14, 15, 14, 15, 22, 10, 13, 6, -13, 6)
+color = Color(0.25, 0.16, 0.11, 0.20)
+
+[node name="Tail" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(14, 3, 31, -3, 34, 5, 20, 12)
+color = Color(0.88, 0.58, 0.33, 1)
+
+[node name="Body" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-20, 1, -15, -12, 0, -18, 15, -12, 21, 2, 14, 13, -14, 13)
+color = Color(0.94, 0.72, 0.43, 1)
+
+[node name="Head" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-14, -10, -11, -28, -2, -20, 2, -20, 11, -28, 14, -10, 8, -1, -8, -1)
+color = Color(0.97, 0.78, 0.49, 1)
+
+[node name="Face" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-5, -13, 5, -13, 0, -8)
+color = Color(0.54, 0.30, 0.21, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cat")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 4.0
+target_desired_distance = 4.0
+avoidance_enabled = false
