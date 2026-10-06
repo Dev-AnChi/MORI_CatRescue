@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=12 format=3]
 
 [ext_resource type="PackedScene" path="res://scenes/actors/caretaker.tscn" id="1_caretaker"]
 [ext_resource type="PackedScene" path="res://scenes/interactables/food_bowl.tscn" id="2_food_bowl"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" path="res://scenes/interactables/cat_bed.tscn" id="5_cat_bed"]
 [ext_resource type="PackedScene" path="res://scenes/interactables/cat_toy.tscn" id="6_cat_toy"]
 [ext_resource type="PackedScene" path="res://scenes/actors/cat.tscn" id="7_cat"]
+[ext_resource type="Script" path="res://scripts/systems/adoption_system.gd" id="8_adoption_system"]
+[ext_resource type="PackedScene" path="res://scenes/ui/adoption_panel.tscn" id="9_adoption_panel"]
+[ext_resource type="PackedScene" path="res://scenes/ui/adoption_wall.tscn" id="10_adoption_wall"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_room"]
 vertices = PackedVector2Array(64, 96, 1088, 96, 1088, 600, 64, 600)
@@ -71,3 +74,26 @@ position = Vector2(620, 190)
 position = Vector2(760, 410)
 cat_id = "miso"
 display_name = "Miso"
+
+[node name="AdoptionSystem" type="Node" parent="." groups=["adoption_system"]]
+script = ExtResource("8_adoption_system")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="AdoptionButton" type="Button" parent="UI"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 126.0
+offset_bottom = 54.0
+text = "Adoption"
+
+[node name="AdoptionWallButton" type="Button" parent="UI"]
+offset_left = 136.0
+offset_top = 16.0
+offset_right = 278.0
+offset_bottom = 54.0
+text = "Adoption Wall"
+
+[node name="AdoptionPanel" parent="UI" instance=ExtResource("9_adoption_panel")]
+
+[node name="AdoptionWall" parent="UI" instance=ExtResource("10_adoption_wall")]

@@ -47,5 +47,30 @@
         ]
       }
     ]
+  },
+  {
+    "id": "daily_routine",
+    "prompt": "Một ngày bận rộn, bạn sẽ chuẩn bị gì để mèo vẫn an toàn và thoải mái?",
+    "answers": [
+      {
+        "id": "enrichment_and_check_in",
+        "tags": [
+          "patient",
+          "cat_knowledge"
+        ]
+      },
+      {
+        "id": "leave_alone_without_plan",
+        "tags": [
+          "red_flag_commitment"
+        ]
+      },
+      {
+        "id": "return_cat_if_inconvenient",
+        "tags": [
+          "hard_block_welfare"
+        ]
+      }
+    ]
   }
 ]

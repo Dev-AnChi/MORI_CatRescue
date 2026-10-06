@@ -255,6 +255,11 @@ func _update_debug_label() -> void:
 		debug_label.text = "%s\n%s" % [display_name, CatState.keys()[current_state]]
 
 
+func prepare_for_adoption() -> void:
+	_abort_action()
+	set_physics_process(false)
+
+
 func _choose_wander_target() -> Vector2:
 	for _attempt in 3:
 		var direction := Vector2.from_angle(_random.randf_range(0.0, TAU))
