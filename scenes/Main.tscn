@@ -52,19 +52,19 @@ position = Vector2(576, 348)
 [node name="Interactables" type="Node2D" parent="World"]
 y_sort_enabled = true
 
-[node name="FoodBowl" parent="World/Interactables" instance=ExtResource("2_food_bowl")]
+[node name="FoodBowl" parent="World/Interactables" groups=["food_bowl"] instance=ExtResource("2_food_bowl")]
 position = Vector2(270, 470)
 
-[node name="WaterBowl" parent="World/Interactables" instance=ExtResource("3_water_bowl")]
+[node name="WaterBowl" parent="World/Interactables" groups=["water_bowl"] instance=ExtResource("3_water_bowl")]
 position = Vector2(400, 470)
 
-[node name="LitterBox" parent="World/Interactables" instance=ExtResource("4_litter_box")]
+[node name="LitterBox" parent="World/Interactables" groups=["litter_box"] instance=ExtResource("4_litter_box")]
 position = Vector2(900, 220)
 
-[node name="CatBed" parent="World/Interactables" instance=ExtResource("5_cat_bed")]
+[node name="CatBed" parent="World/Interactables" groups=["cat_bed"] instance=ExtResource("5_cat_bed")]
 position = Vector2(250, 210)
 
-[node name="CatToy" parent="World/Interactables" instance=ExtResource("6_cat_toy")]
+[node name="CatToy" parent="World/Interactables" groups=["cat_toy"] instance=ExtResource("6_cat_toy")]
 position = Vector2(620, 190)
 
 [node name="Miso" parent="World/Actors" instance=ExtResource("7_cat")]

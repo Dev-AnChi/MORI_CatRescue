@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=4 format=3]
 
 [ext_resource type="Script" path="res://scripts/actors/cat_controller.gd" id="1_controller"]
+[ext_resource type="Script" path="res://scripts/actors/cat_needs.gd" id="2_needs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cat"]
 radius = 15.0
@@ -28,6 +29,17 @@ color = Color(0.97, 0.78, 0.49, 1)
 polygon = PackedVector2Array(-5, -13, 5, -13, 0, -8)
 color = Color(0.54, 0.30, 0.21, 1)
 
+[node name="DebugLabel" type="Label" parent="."]
+offset_left = -44.0
+offset_top = -64.0
+offset_right = 44.0
+offset_bottom = -28.0
+theme_override_colors/font_color = Color(0.26, 0.17, 0.12, 1)
+theme_override_font_sizes/font_size = 12
+text = "Cat\nIDLE"
+horizontal_alignment = 1
+mouse_filter = 2
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_cat")
 
@@ -35,3 +47,6 @@ shape = SubResource("CircleShape2D_cat")
 path_desired_distance = 4.0
 target_desired_distance = 4.0
 avoidance_enabled = false
+
+[node name="Needs" type="Node" parent="."]
+script = ExtResource("2_needs")
